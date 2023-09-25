@@ -1,6 +1,6 @@
 # LD_PRELOAD Trick With Zig
 
-This tutorial covers how to use the `LD_PRELOAD` trick using with Zig on Linux. `mimalloc` is used as an example, but any C allocator is possible to use with this trick.
+This tutorial covers how to use the `LD_PRELOAD` trick using with Zig on Linux. `mimalloc` is used as an example, but any C allocator is possible to use with this trick. Dynamically linking with `libc` is required for the trick to work.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ This tutorial covers how to use the `LD_PRELOAD` trick using with Zig on Linux. 
     }
     ```
 
-1. Add a line to `build.zig` which will enable `libc`.
+1. Add a line to `build.zig` which will enable and dynamically link `libc`.
 
     ```zig
     (snip)
